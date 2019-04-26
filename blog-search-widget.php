@@ -19,7 +19,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-		// ONLY RUN IF WOOCOMMERCE IS ACTIVE....
+		// ONLY RUN IF WOOCOMMERCE IS ACTIVE...
 	include_once( WP_PLUGIN_DIR . '/' . 'woocommerce/includes/abstracts/abstract-wc-widget.php' );
 		class WC_Widget_Blog_Search extends WC_Widget {
 			/**
@@ -54,15 +54,12 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 			// get the widget configuration
 	    $title = $instance['title'];
 	    $placeholder = $instance['placeholder'];
-
 			echo $args['before_widget'];
 			if ( $title ) {
 				echo $args['before_title'] . wp_kses_post( $title ) . $args['after_title'];
 			}
 
 			// Create Blog Search Form
-				//get_blog_search_form();
-				//error_log('searching');
 				?>
 				<form role="search" method="get" class="woocommerce-blog-search searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<div class="flex-row relative">
