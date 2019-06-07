@@ -19,7 +19,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-		// ONLY RUN IF WOOCOMMERCE IS ACTIVE...
+		// ONLY RUN IF WOOCOMMERCE IS ACTIVE....
 	include_once( WP_PLUGIN_DIR . '/' . 'woocommerce/includes/abstracts/abstract-wc-widget.php' );
 		class WC_Widget_Blog_Search extends WC_Widget {
 			/**
@@ -61,18 +61,12 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			// Create Blog Search Form
 				?>
-				<form role="search" method="get" class="woocommerce-blog-search searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<div class="flex-row relative">
-					<div class="flex-col flex-grow">
+				<form role="search" method="get" class="woocommerce-blog-search search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<label class="screen-reader-text" for="woocommerce-blog-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php esc_html_e( 'Search for:', 'woocommerce' ); ?></label>
 					<input type="search" id="woocommerce-blog-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="<?php if ( $placeholder ) { echo wp_kses_post( $placeholder ); } else { echo esc_attr__( 'Search blog posts&hellip;', 'woocommerce' ); }
 	        ?>" value="<?php echo get_search_query(); ?>" name="s" />
-					</div>
-					<div class="flex-col">
-					<button type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" class="ux-search-submit submit-button secondary button icon mb-0"><i class="fa icon-search"></i></button>
-					</div>
+					<button type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" class="search-submit"><svg class="icon icon-search" aria-hidden="true" role="img"> <use href="#icon-search" xlink:href="#icon-search"></use> </svg><span class="screen-reader-text">Search</span></button>
 					<input type="hidden" name="post_type" value="post" />
-					</div>
 				</form>
 				<?php
 
