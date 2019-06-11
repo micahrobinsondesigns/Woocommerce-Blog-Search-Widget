@@ -1,22 +1,23 @@
 <?php
+
 /**
  * @wordpress-plugin
  * @category Widgets
  * @extends \WP_Widget
  * Plugin Name:       Blog Search Widget
  * Description:       Creates a Blog Search that only returns blog posts.
- * Version:           1.2
+ * Version:           1.0
  * Author:            Micah Robinson
  * License:           GPL-2.0
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       blog-search-wdiget
- WC tested up to: 3.6
+ WC tested up to: 5.1.1
  */
 
 /** Die if accessed directly
 */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 		// ONLY RUN IF WOOCOMMERCE IS ACTIVE....
